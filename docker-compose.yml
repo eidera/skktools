@@ -1,0 +1,12 @@
+version: '3'
+services:
+  skktools:
+    container_name: skktools
+    build:
+      context: .
+    environment:
+      CONTENTS_DIR: /app/contents
+    volumes:
+      - ./scripts:/app/scripts
+      - ./contents:/app/contents
+    command: /bin/bash ./run.bash
